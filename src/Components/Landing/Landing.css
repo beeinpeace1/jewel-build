@@ -1,0 +1,68 @@
+#landing-page {
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+#landing-page-logo {
+  position: absolute;
+  top: 30%;
+  width: 10em;
+  left: 62%;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+#next-btn {
+  width: 40px;
+  height: 40px;
+  background: lightgrey;
+  display: grid;
+  place-items: center center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  box-shadow: 0 0px 15px #000b;
+  transition: 0.3s;
+}
+
+#next-btn:hover {
+  box-shadow: 0 0px 25px #000b;
+}
+
+#next-btn:hover a {
+  transform: translateX(2px);
+}
+
+a {
+  text-decoration: none;
+  font-size: 2em;
+  color: #444;
+  font-weight: bolder;
+  transition: 0.3s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  #landing-page-logo {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
