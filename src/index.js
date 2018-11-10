@@ -17,10 +17,10 @@ ReactDOM.render(
 
 const THEME = createMuiTheme({
   typography: {
-   "fontFamily": "\"MyFont\", \"Helvetica\", \"Arial\", sans-serif",
+   "fontFamily": "\"Impact\", \"Helvetica\", \"Arial\", sans-serif",
    "fontSize": 14,
-   "fontWeightLight": 300,
+   "fontWeightLight": 500,
    "fontWeightRegular": 400,
-   "fontWeightMedium": 500
+   "fontWeightMedium": 600
   }
 });

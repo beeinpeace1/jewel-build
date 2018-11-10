@@ -34,6 +34,11 @@ const styles = theme => ({
     padding: "1px 50px",
     height: "100vh"
   },
+  tabLabel: {
+    color: "#444",
+    fontWeight: "bold",
+    fontFamily: "Arimo, sans-serif"
+  },
   search: {
     position: "relative",
     backgroundColor: "#444",
@@ -159,29 +164,19 @@ class FullWidthTabs extends React.Component {
                   }}
                 >
                   <Tab
-                    label="Rings"
-                    textColor="primary"
-                    style={{ color: "#000" }}
+                    label={<span className={classes.tabLabel}>Rings</span>}
                   />
                   <Tab
-                    label="Ear Rings"
-                    textColor="primary"
-                    style={{ color: "#000" }}
+                    label={<span className={classes.tabLabel}>Ear Rings</span>}
                   />
                   <Tab
-                    label="Bangles"
-                    textColor="primary"
-                    style={{ color: "#000" }}
+                    label={<span className={classes.tabLabel}>Bangles</span>}
                   />
                   <Tab
-                    label="Pendants"
-                    textColor="primary"
-                    style={{ color: "#000" }}
+                    label={<span className={classes.tabLabel}>Pendants</span>}
                   />
                   <Tab
-                    label="Bracelets"
-                    textColor="primary"
-                    style={{ color: "#000" }}
+                    label={<span className={classes.tabLabel}>Bracelets</span>}
                   />
                 </Tabs>
               </AppBar>
