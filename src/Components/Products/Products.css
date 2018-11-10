@@ -35,7 +35,7 @@ img.metal-stone {
 #show-img {
   display: grid;
   place-items: center center;
-  padding: 20px;
+  height: 100%;
 }
 
 .jewel-holder{
@@ -109,6 +109,10 @@ img.metal-stone {
 @media (max-width: 768px) { 
   .search-bar {
     width: 100% !important;
+  }
+
+  label {
+    font-size: 0.6em;
   }
 
   .products-holder {

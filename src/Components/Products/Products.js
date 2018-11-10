@@ -119,7 +119,7 @@ class FullWidthTabs extends React.Component {
           <Grid container xs={12} md={2} alignItems="center" justify="center">
             <Grid item>
               <div class="logo-holder">
-                <Link to="/"><img src={Logo} alt="ss" width={"80px"} /></Link>
+                <Link to="/products"><img src={Logo} alt="ss" width={"80px"} /></Link>
               </div>
             </Grid>
           </Grid>
