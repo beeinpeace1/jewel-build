@@ -1,16 +1,13 @@
 #landing-page {
-  position: relative;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
+  height: 100vh;
 }
 
 #landing-page-logo {
   position: absolute;
-  top: 30%;
-  width: 10em;
-  left: 62%;
+  top: 55%;
+  width: 11em;
+  left: 50%;
+  transform: translate(-50%, -50%);
   animation-name: fadein;
   animation-duration: 1s;
   animation-timing-function: linear;
@@ -20,8 +17,8 @@
 }
 
 #next-btn {
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   background: lightgrey;
   display: grid;
   place-items: center center;
@@ -43,7 +40,7 @@
 
 a {
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #444;
   font-weight: bolder;
   transition: 0.3s;
@@ -59,10 +56,34 @@ a {
   }
 }
 
-@media only screen and (max-device-width: 1024px) {
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
   #landing-page-logo {
-    top: 20%;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
   }
-}
+ }
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  #landing-page-logo {
+    left: 50%;
+    top: 50%;
+  }
+ }
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  #landing-page-logo {
+    left: 930px;
+    top: 370px;
+  }
+ }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  #landing-page-logo {
+    left: 930px;
+    top: 370px;
+  }
+ }

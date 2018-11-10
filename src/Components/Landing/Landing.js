@@ -11,13 +11,11 @@ class Landing extends React.Component {
         id="landing-page"
         style={{
           backgroundImage: `url(${Background})`,
-          height: "100vh",
-          width: "100%"
         }}
       >
         <img src={Logo} alt="img" id="landing-page-logo" />
         <div id="next-btn">
-          <Link to="/products">></Link>
+          <Link to="/products"><i class="fa fa-arrow-right"></i></Link>
         </div>
       </div>
     );
