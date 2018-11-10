@@ -31,7 +31,7 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    padding: "20px 50px",
+    padding: "1px 50px",
     height: "100vh"
   },
   search: {
@@ -107,20 +107,20 @@ class FullWidthTabs extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root} style={{
+      <div className={classes.root + " products-holder"} style={{
         backgroundImage: `url(${BG})`
       }}>
         <Grid container spacing={8}>
           <Grid container xs={12} md={2} alignItems="center" justify="center">
             <Grid item>
-              <div>
+              <div class="logo-holder">
                 <Link to="/"><img src={Logo} alt="ss" width={"80px"} /></Link>
               </div>
             </Grid>
           </Grid>
           <Grid container xs={12} md={10}>
             <Grid item xs={12}>
-              <div className={classes.search}>
+              <div className={classes.search + " search-bar"}>
                 <div className={classes.searchIcon}>
                   <SearchIcon />
                 </div>
@@ -142,7 +142,8 @@ class FullWidthTabs extends React.Component {
                 }}
                 style={{
                   borderBottom: "4px solid black",
-                  marginBottom: "10px"
+                  marginBottom: "10px",
+                  width: "100%"
                 }}
               >
                 <Tabs
@@ -152,6 +153,9 @@ class FullWidthTabs extends React.Component {
                   scrollable
                   classes={{
                     indicator: classes.ind
+                  }}
+                  style={{
+                    width: "100%"
                   }}
                 >
                   <Tab
@@ -189,10 +193,10 @@ class FullWidthTabs extends React.Component {
           exact
           render={() => {
             return (
-              <Grid container className={classes.container} spacing={16}>
+              <Grid container className={classes.container} spacing={16} >
                 <Grid item xs={12} className={classes.hun}>
                   <Grid
-                    container
+                    container 
                     className={classes.container}
                     justify="left"
                     spacing={Number(8)}
@@ -216,6 +220,10 @@ class FullWidthTabs extends React.Component {
             return <ProductDesc val={value} logo={Logo} />
           }} />
         })}
+        <div class="footer">
+          <div className="footer-left"></div>
+          <div className="footer-right"></div>
+        </div>
       </div>
     );
   }

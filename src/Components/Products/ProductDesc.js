@@ -77,7 +77,7 @@ class ProductDesc extends Component {
 
       this.setState({
         gem: gem,
-        ring: image
+        ring: YellowgoldRing
       });
     };
   }

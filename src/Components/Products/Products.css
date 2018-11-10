@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  box-shadow: 0 0 5px #0005;
 }
 
 .product:hover {
@@ -62,6 +63,34 @@ img.metal-stone {
   position: relative;
 }
 
+.logo-holder {
+  border-top: 10px solid #444;
+  padding: 10px;
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+}
+
+.footer-left {
+  height: 15px;
+  width: 80%;
+  background: lightgrey;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.footer-right {
+  height: 7px;
+  width: 10%;
+  background: lightgrey;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
 @media screen and (min-width: 760px){
   .right-border::after {
     content: "";
@@ -75,3 +104,14 @@ img.metal-stone {
     right: 40px;
   }
 }
+
+ /* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+  .search-bar {
+    width: 100% !important;
+  }
+
+  .products-holder {
+    padding: 0 !important;
+  }
+ }
