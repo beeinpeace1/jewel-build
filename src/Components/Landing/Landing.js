@@ -8,7 +8,7 @@ import Logo from "./../../assets/images/landing/logo.png";
 class Landing extends React.Component {
   componentDidMount(){
     setTimeout(() => {
-      // this.props.history.push("/products");
+      this.props.history.push("/products");
     }, 4000);
   }
   

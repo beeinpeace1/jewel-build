@@ -95,7 +95,7 @@ const styles = theme => ({
   container: {
     width: "100%",
     margin: "10px auto",
-    background: "#fafafa"
+    background: "transparent"
   },
   hun: {
     width: "100%"
