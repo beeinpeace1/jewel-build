@@ -14,6 +14,17 @@ import Product from "./Product";
 import ProductDesc from './ProductDesc';
 import "./Products.css";
 import BG from './../../assets/images/page3_bg.jpg';
+import LogoGRD from './../../assets/images/gold_ring_daimond.png';
+import LogoBangle from './../../assets/images/products/bangle.png';
+import LogoBracelet from './../../assets/images/products/braclet.png';
+
+let ProductData = [
+  { img: LogoGRD},
+  {},
+  { img: LogoBangle},
+  {},
+  { img: LogoBracelet}
+];
 
 function TabContainer({ children, dir }) {
   return (
@@ -198,9 +209,11 @@ class FullWidthTabs extends React.Component {
                   >
                     {[0, 1, 2, 3, 4, 5, 6, 7].map(value => (
                       <Grid key={value} item xs={6} md={3}>
-                        <Link to={`/products/${value}`}>
-                          <Product />
-                        </Link>
+                        {this.state.value === 0 && <Link to={`/products/${value}`}>
+                          <Product pdt={ProductData[this.state.value]}/>
+                        </Link> 
+                        }
+                        {this.state.value > 0 && <Product pdt={ProductData[this.state.value]} />}
                       </Grid>
                     ))}
                   </Grid>
