@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, Route, withRouter} from "react-router-dom";
+import { Link, Route, withRouter } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -11,19 +11,17 @@ import Logo from "./../../assets/images/landing/logo.png";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import Product from "./Product";
-import ProductDesc from './ProductDesc';
+import ProductDesc from "./ProductDesc";
 import "./Products.css";
-import BG from './../../assets/images/page3_bg.jpg';
-import LogoGRD from './../../assets/images/gold_ring_daimond.png';
-import LogoBangle from './../../assets/images/products/bangle.png';
-import LogoBracelet from './../../assets/images/products/braclet.png';
+import BG from "./../../assets/images/page3_bg.jpg";
+import LogoGRD from "./../../assets/images/gold_ring_daimond.png";
+import LogoBangle from "./../../assets/images/products/bangle.png";
+import LogoBracelet from "./../../assets/images/products/braclet.png";
 
 let ProductData = [
-  { img: LogoGRD},
-  {},
-  { img: LogoBangle},
-  {},
-  { img: LogoBracelet}
+  { img: LogoGRD },
+  { img: LogoBangle },
+  { img: LogoBracelet }
 ];
 
 function TabContainer({ children, dir }) {
@@ -111,7 +109,7 @@ class FullWidthTabs extends React.Component {
 
   handleChange = (event, value) => {
     this.setState({ value }, () => {
-      this.props.history.push('/products')
+      this.props.history.push("/products");
     });
   };
 
@@ -123,14 +121,19 @@ class FullWidthTabs extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root + " products-holder"} style={{
-        backgroundImage: `url(${BG})`
-      }}>
+      <div
+        className={classes.root + " products-holder"}
+        style={{
+          backgroundImage: `url(${BG})`
+        }}
+      >
         <Grid container spacing={8}>
           <Grid container xs={12} md={2} alignItems="center" justify="center">
             <Grid item>
               <div class="logo-holder">
-                <Link to="/products"><img src={Logo} alt="ss" width={"80px"} /></Link>
+                <Link to="/products">
+                  <img src={Logo} alt="ss" width={"80px"} />
+                </Link>
               </div>
             </Grid>
           </Grid>
@@ -141,7 +144,7 @@ class FullWidthTabs extends React.Component {
                   <SearchIcon />
                 </div>
                 <InputBase
-                  placeholder="Search…"
+                  placeholder="Search"
                   classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput
@@ -149,7 +152,7 @@ class FullWidthTabs extends React.Component {
                 />
               </div>
             </Grid>
-            <Grid item xs={12} >
+            <Grid item xs={12}>
               <AppBar
                 position="static"
                 color="primary"
@@ -177,15 +180,15 @@ class FullWidthTabs extends React.Component {
                   <Tab
                     label={<span className={classes.tabLabel}>Rings</span>}
                   />
-                  <Tab
+                  {/* <Tab
                     label={<span className={classes.tabLabel}>Ear Rings</span>}
-                  />
+                  /> */}
                   <Tab
                     label={<span className={classes.tabLabel}>Bangles</span>}
                   />
-                  <Tab
+                  {/* <Tab
                     label={<span className={classes.tabLabel}>Pendants</span>}
-                  />
+                  /> */}
                   <Tab
                     label={<span className={classes.tabLabel}>Bracelets</span>}
                   />
@@ -199,21 +202,24 @@ class FullWidthTabs extends React.Component {
           exact
           render={() => {
             return (
-              <Grid container className={classes.container} spacing={16} >
+              <Grid container className={classes.container} spacing={16}>
                 <Grid item xs={12} className={classes.hun}>
                   <Grid
-                    container 
+                    container
                     className={classes.container}
                     justify="left"
                     spacing={Number(8)}
                   >
                     {[0, 1, 2, 3, 4, 5, 6, 7].map(value => (
                       <Grid key={value} item xs={6} md={3}>
-                        {this.state.value === 0 && <Link to={`/products/${value}`}>
-                          <Product pdt={ProductData[this.state.value]}/>
-                        </Link> 
-                        }
-                        {this.state.value > 0 && <Product pdt={ProductData[this.state.value]} />}
+                        {this.state.value === 0 && (
+                          <Link to={`/products/${value}`}>
+                            <Product pdt={ProductData[this.state.value]} />
+                          </Link>
+                        )}
+                        {this.state.value > 0 && (
+                          <Product pdt={ProductData[this.state.value]} />
+                        )}
                       </Grid>
                     ))}
                   </Grid>
@@ -222,15 +228,20 @@ class FullWidthTabs extends React.Component {
             );
           }}
         />
-        
-        {[0, 1, 2, 3, 4, 5, 6, 7].map(value=>{
-          return <Route path={`/products/${value}`} render={()=>{
-            return <ProductDesc val={value} logo={Logo} />
-          }} />
+
+        {[0, 1, 2, 3, 4, 5, 6, 7].map(value => {
+          return (
+            <Route
+              path={`/products/${value}`}
+              render={() => {
+                return <ProductDesc val={value} logo={Logo} />;
+              }}
+            />
+          );
         })}
         <div class="footer">
-          <div className="footer-left"></div>
-          <div className="footer-right"></div>
+          <div className="footer-left" />
+          <div className="footer-right" />
         </div>
       </div>
     );
@@ -242,4 +253,6 @@ FullWidthTabs.propTypes = {
   theme: PropTypes.object.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(withRouter(FullWidthTabs));
+export default withStyles(styles, { withTheme: true })(
+  withRouter(FullWidthTabs)
+);
